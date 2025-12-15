@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
@@ -106,7 +106,9 @@ posts = {
 }
 
 @app.get("/")
-def read_root():
+def read_root(limit: int=None):
+    if limit is not None:
+        return {k: posts[k] for k in sorted(posts.keys())[:limit]}
     return {"message" : "Welcome to Project-3"}
 
 @app.get("/{id}")
@@ -115,4 +117,4 @@ def get_post(id:int):
     if post:
         return post
     else:
-        return {"message":"That is not in the database"}
+        raise HTTPException(status_code=404, detail="That post is not in the database")
