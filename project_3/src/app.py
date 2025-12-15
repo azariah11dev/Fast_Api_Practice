@@ -109,7 +109,7 @@ posts = {
 def read_root():
     return {"message" : "Welcome to Project-3"}
 
-@app.get("/post/{id}")
+@app.get("/{id}")
 def get_post(id:int):
     post = posts.get(id)
     if post:
