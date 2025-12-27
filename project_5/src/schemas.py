@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class Item(BaseModel):
+class Post_Format(BaseModel):
     title: str
     content: str
     location: str

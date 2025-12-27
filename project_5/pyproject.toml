@@ -5,10 +5,13 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "aiosqlite>=0.22.1",
     "datetime>=6.0",
     "fastapi>=0.127.1",
     "pydantic>=2.12.5",
+    "python-multipart>=0.0.21",
     "sqlalchemy>=2.0.45",
+    "typing>=3.10.0.0",
     "uuid>=1.30",
     "uvicorn>=0.40.0",
 ]
